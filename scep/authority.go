@@ -282,6 +282,7 @@ func (a *Authority) SignCSR(ctx context.Context, csr *x509.CertificateRequest, m
 		PostalCode:         csr.Subject.PostalCode,
 		SerialNumber:       csr.Subject.SerialNumber,
 		CommonName:         csr.Subject.CommonName,
+		EMail:         		csr.Subject.Email,
 	})
 
 	// Get authorizations from the SCEP provisioner.

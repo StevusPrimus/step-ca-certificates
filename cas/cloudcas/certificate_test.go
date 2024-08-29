@@ -178,6 +178,7 @@ func Test_createSubject(t *testing.T) {
 				PostalCode:         []string{"12345"},
 				SerialNumber:       "1234567890",
 				CommonName:         "test.smallstep.com",
+				EMail:			  	"test@smallstep.com",
 			},
 		}}, &pb.Subject{
 			CountryCode:        "US",
@@ -188,6 +189,7 @@ func Test_createSubject(t *testing.T) {
 			StreetAddress:      "1 A St.",
 			PostalCode:         "12345",
 			CommonName:         "test.smallstep.com",
+			EMail:			  	"test@smallstep.com",
 		}},
 	}
 	for _, tt := range tests {

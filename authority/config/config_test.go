@@ -233,6 +233,7 @@ func TestAuthConfigValidate(t *testing.T) {
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
 		CommonName:    "test",
+		EMail:		   "test2",
 	}
 
 	maxjwk, err := jose.ReadKey("../testdata/secrets/max_pub.jwk")

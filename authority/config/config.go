@@ -151,6 +151,7 @@ type ASN1DN struct {
 	StreetAddress      string `json:"streetAddress,omitempty"`
 	SerialNumber       string `json:"serialNumber,omitempty"`
 	CommonName         string `json:"commonName,omitempty"`
+	EMail         	   string `json:"eMail,omitempty"`
 }
 
 // AuthConfig represents the configuration options for the authority. An

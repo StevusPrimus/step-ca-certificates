@@ -159,6 +159,7 @@ func (a *Authority) Export() (c *linkedca.Configuration, err error) {
 			Locality:           v.Locality,
 			Province:           v.Province,
 			StreetAddress:      v.StreetAddress,
+			EMail:              v.EMail,
 			SerialNumber:       v.SerialNumber,
 			CommonName:         v.CommonName,
 		}

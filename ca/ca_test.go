@@ -87,6 +87,7 @@ func TestCASign(t *testing.T) {
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
 		CommonName:    "test.smallstep.com",
+		EMail:    	   "test@smallstep.com",
 	}
 
 	config, err := authority.LoadConfiguration("testdata/ca.json")
@@ -308,6 +309,7 @@ ZEp7knvU2psWRw==
 							Locality:      []string{asn1dn.Locality},
 							StreetAddress: []string{asn1dn.StreetAddress},
 							Province:      []string{asn1dn.Province},
+							EMail:         []string{asn1dn.EMail},
 							CommonName:    asn1dn.CommonName,
 						}.String())
 					assert.Equals(t, leaf.Issuer, intermediate.Subject)
@@ -579,6 +581,7 @@ func TestCARenew(t *testing.T) {
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
 		CommonName:    "test",
+		EMail:		   "test@smallstep.com",
 	}
 
 	config, err := authority.LoadConfiguration("testdata/ca.json")

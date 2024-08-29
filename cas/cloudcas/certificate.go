@@ -129,6 +129,9 @@ func createSubject(cert *x509.Certificate) *pb.Subject {
 	if len(sub.PostalCode) > 0 {
 		ret.PostalCode = sub.PostalCode[0]
 	}
+	if len(sub.EMail) > 0 {
+		ret.EMail = sub.EMail[0]
+	}
 	return ret
 }
 

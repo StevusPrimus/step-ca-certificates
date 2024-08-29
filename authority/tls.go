@@ -81,6 +81,9 @@ func withDefaultASN1DN(def *config.ASN1DN) provisioner.CertificateModifierFunc {
 		if len(crt.Subject.StreetAddress) == 0 && def.StreetAddress != "" {
 			crt.Subject.StreetAddress = append(crt.Subject.StreetAddress, def.StreetAddress)
 		}
+		if len(crt.Subject.EMail) == 0 && def.EMail != "" {
+			crt.Subject.EMail = append(crt.Subject.EMail, def.EMail)
+		}
 		if crt.Subject.SerialNumber == "" && def.SerialNumber != "" {
 			crt.Subject.SerialNumber = def.SerialNumber
 		}

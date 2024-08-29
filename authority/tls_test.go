@@ -258,6 +258,7 @@ func TestAuthority_SignWithContext(t *testing.T) {
 		Locality:      "Landscapes",
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
+		EMail:         "test@smallstep.com",
 		CommonName:    "test.smallstep.com",
 	}
 
@@ -960,6 +961,7 @@ ZYtQ9Ot36qc=
 							Locality:      []string{tmplt.Locality},
 							StreetAddress: []string{tmplt.StreetAddress},
 							Province:      []string{tmplt.Province},
+							EMail:         []string{tmplt.EMail},
 							CommonName:    "smallstep test",
 						}.String(), leaf.Subject.String())
 						assert.Equal(t, []string{"test.smallstep.com"}, leaf.DNSNames)
@@ -1025,6 +1027,7 @@ func TestAuthority_Renew(t *testing.T) {
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
 		CommonName:    "renew",
+		EMail:         "mailtest",
 	}
 
 	now := time.Now().UTC()
@@ -1179,6 +1182,7 @@ func TestAuthority_Renew(t *testing.T) {
 					assert.Equal(t, []string{tmplt.Locality}, leaf.Subject.Locality)
 					assert.Equal(t, []string{tmplt.StreetAddress}, leaf.Subject.StreetAddress)
 					assert.Equal(t, []string{tmplt.Province}, leaf.Subject.Province)
+					assert.Equal(t, []string{tmplt.EMail}, leaf.Subject.EMail)
 					assert.Equal(t, tmplt.CommonName, leaf.Subject.CommonName)
 
 					assert.Equal(t, intermediate.Subject, leaf.Issuer)
@@ -1262,6 +1266,7 @@ func TestAuthority_Rekey(t *testing.T) {
 		Locality:      "Landscapes",
 		Province:      "Sudden Cliffs",
 		StreetAddress: "TNT",
+		EMail:         "test2"
 		CommonName:    "renew",
 	}
 
@@ -1383,6 +1388,7 @@ func TestAuthority_Rekey(t *testing.T) {
 						Locality:      []string{tmplt.Locality},
 						StreetAddress: []string{tmplt.StreetAddress},
 						Province:      []string{tmplt.Province},
+						EMail:         []string{tmplt.EMail},
 						CommonName:    tmplt.CommonName,
 					}.String(), leaf.Subject.String())
 					assert.Equal(t, intermediate.Subject, leaf.Issuer)
